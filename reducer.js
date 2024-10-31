@@ -6,7 +6,11 @@ export default function reducer(state = init, action, args){
     console.log(action, args)
     switch (action){
         case 'ADD':
-            
+            const [newCar] = args
+            return{
+              ...state,
+              cars: [...state.car, newCar]
+            }
         default:
             return state
     }
